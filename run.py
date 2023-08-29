@@ -10,9 +10,15 @@ def initialize_grid(size):
     grid = [['~' for _ in range(size)] for _ in range(size)]
     return grid
 
+def display_grid(grid):
+    # Display the grid to the console
+    for row in grid:
+        print(' '.join(row))
 
 
 # Initialize a 5x5 grid
 grid_size = 5
 grid = initialize_grid(grid_size)
 
+# Display the initial grid
+display_grid(grid)
