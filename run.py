@@ -42,7 +42,7 @@ def place_ship(grid, row, col, orientation, length):
 
 def place_player_ships(grid, ship_length):
     """Player can enter a place and direction they want their ship to be placed in"""
-    display_grid(grid)  # Use the passed grid instead of directly referencing player_grid
+    display_grid(grid)
     row = int(input("Enter the row number to place your ship: \n"))
     col = int(input("Enter the column number to place your ship: \n"))
     orientation = input("Enter the orientation (H for horizontal, V for vertical): \n").upper()
