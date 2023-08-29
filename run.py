@@ -41,10 +41,18 @@ def place_ship(grid, row, col, orientation, length):
             grid[row + i][col] = 'S'
 
 def place_player_ships(grid, ship_length):
+    """Player can enter a place and direction they want their ship to be placed in"""
     display_grid(player_grid)
     row = int(input("Enter the row number to place your ship: "))
     col = int(input("Enter the column number to place your ship: "))
     orientation = input("Enter the orientation (H for horizontal, V for vertical): ")
+    place_ship(grid, row, col, orientation, ship_length)
+
+def place_computer_ships(grid, ship_length):
+    """Computer can place a random ship in the grid"""
+    row = random.randint(0, len(grid) - 1)
+    col = random.randint(0, len(grid[0]) - 1)
+    orientation = random.choice(['H', 'V'])
     place_ship(grid, row, col, orientation, ship_length)
 
 # Initialize a 5x5 grid for player and computer
@@ -53,10 +61,12 @@ computer_grid = initialize_grid(5)
 
 
 
-# Place a 3-cell long ship for player
+# Place a 3-cell long ship for player and computer
 place_player_ships(player_grid, 3)
-
+place_computer_ships(computer_grid, 3)
 
 # Display the grids
 print("Player Grid:")
 display_grid(player_grid)
+print("Computer Grid:")
+display_grid(computer_grid)
