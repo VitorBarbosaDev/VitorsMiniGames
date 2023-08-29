@@ -55,6 +55,16 @@ def place_computer_ships(grid, ship_length):
     orientation = random.choice(['H', 'V'])
     place_ship(grid, row, col, orientation, ship_length)
 
+def make_guess(grid, row, col):
+    if grid[row][col] == 'S':
+        print("It's a hit!")
+        grid[row][col] = 'H'
+        return True
+    else:
+        print("It's a miss!")
+        grid[row][col] = 'M'
+        return False
+
 # Initialize a 5x5 grid for player and computer
 player_grid = initialize_grid(5)
 computer_grid = initialize_grid(5)
@@ -64,6 +74,8 @@ computer_grid = initialize_grid(5)
 # Place a 3-cell long ship for player and computer
 place_player_ships(player_grid, 3)
 place_computer_ships(computer_grid, 3)
+
+
 
 # Display the grids
 print("Player Grid:")
