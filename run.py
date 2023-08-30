@@ -40,6 +40,12 @@ def display_grid(grid):
         print(' '.join(row))
 
 
+def display_guess_grid(grid):
+    """Display the grid for guesses to the console"""
+    for row in grid:
+        print(' '.join(['H' if cell == 'H' else 'M' if cell == 'M' else '~' for cell in row]))
+
+
 def is_valid_guess(row, col, grid_size):
     """Checks if guess is valid"""
     return 0 <= row < grid_size and 0 <= col < grid_size
@@ -74,6 +80,7 @@ def is_within_grid(row, col, orientation, length, grid_size):
         return row + length <= grid_size
     return False
 
+
 def is_empty(grid, row, col, orientation, length):
     """Checks if placement is empty"""
     if orientation == 'H':
@@ -82,11 +89,11 @@ def is_empty(grid, row, col, orientation, length):
         return all(grid[row + i][col] == '~' for i in range(length))
     return False
 
+
 def is_valid_placement(grid, row, col, orientation, length):
     """Checks if placement is valid"""
     grid_size = len(grid)
     return is_within_grid(row, col, orientation, length, grid_size) and is_empty(grid, row, col, orientation, length)
-
 
 
 def place_player_ships(grid, ship_length):
@@ -148,14 +155,17 @@ def main_game_loop(player_grid, computer_grid, ship_lengths):
 
     while player_ships_sunk < total_ship_cells and computer_ships_sunk < total_ship_cells:
         # Player's turn
-        print("Player's Turn:")
+        print("Your Board:")
         display_grid(player_grid)
+        print("Player's Turn:")
         row = int(input("Enter the row number for your guess: \n"))
         col = int(input("Enter the column number for your guess: \n"))
 
         if is_valid_guess(row, col, len(player_grid)):
             if make_guess(computer_grid, row, col):
                 player_ships_sunk += 1
+            print("Your Guesses:")
+            display_guess_grid(computer_grid)
                 # Computer's turn
             print("Computer's Turn:")
             row = random.randint(0, len(computer_grid) - 1)
