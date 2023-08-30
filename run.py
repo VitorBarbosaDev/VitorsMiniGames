@@ -236,6 +236,13 @@ def main_game_loop(player_grid, computer_grid, ship_lengths):
 
 
 if __name__ == "__main__":
+    print("            Welcome to Vitor's Battleships")
+    print("                 ________________")
+    print("            __/______||_______\\___")
+    print("===========|_______________________|==========")
+    print("            \\                    /")
+    print("              \\__________________/")
+
     while True:  # Game replay loop
         # Get grid size from user
         grid_size = get_grid_size()
