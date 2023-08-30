@@ -20,6 +20,8 @@ def initialize_grid(size):
     grid = [['~' for _ in range(size)] for _ in range(size)]
     return grid
 
+def get_grid_size():
+    return int(input("Enter the grid size (e.g., 5 for a 5x5 grid): "))
 
 def display_grid(grid):
     """Display the grid to the console"""
@@ -109,9 +111,13 @@ def main_game_loop(player_grid, computer_grid, ship_length):
         print("Computer wins!")
 
 
+# Get grid size from user
+grid_size = get_grid_size()
+
+
 # Initialize a 5x5 grid for player and computer
-player_grid = initialize_grid(5)
-computer_grid = initialize_grid(5)
+player_grid = initialize_grid(grid_size)
+computer_grid = initialize_grid(grid_size)
 
 # Place a 3-cell long ship for player and computer
 place_player_ships(player_grid, 3)
