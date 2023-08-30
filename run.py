@@ -103,7 +103,7 @@ def place_player_ships(grid, ship_length):
         try:
             row = int(input(f"Enter the row number to place your {ship_length}-cell ship: "))
             col = int(input("Enter the column number: "))
-            orientation = input("Enter the orientation (H for horizontal, V for vertical): ").upper()
+            orientation = input("Enter the orientation (H for horizontal, V for vertical): ").strip().upper()
 
             if orientation not in ['H', 'V']:
                 print("Invalid orientation. Please enter H or V.")
@@ -235,18 +235,27 @@ def main_game_loop(player_grid, computer_grid, ship_lengths):
         print("Computer wins!")
 
 
-# Get grid size from user
-grid_size = get_grid_size()
+if __name__ == "__main__":
+    while True:  # Game replay loop
+        # Get grid size from user
+        grid_size = get_grid_size()
 
-# Initialize a 5x5 grid for player and computer
-player_grid = initialize_grid(grid_size)
-computer_grid = initialize_grid(grid_size)
+        # Initialize a grid for player and computer
+        player_grid = initialize_grid(grid_size)
+        computer_grid = initialize_grid(grid_size)
 
-# Place multiple ships for player and computer
-ship_lengths = [5, 4, 3, 3, 2]
+        # Place multiple ships for player and computer
+        ship_lengths = [5, 4, 3, 3, 2]
+        print("Placement Mode")
+        place_multiple_ships(player_grid, ship_lengths, "player")
+        place_multiple_ships(computer_grid, ship_lengths, "bot")
 
-place_multiple_ships(player_grid, ship_lengths, "player")
-place_multiple_ships(computer_grid, ship_lengths, "bot")
+        print("Start Game Mode")
+        # Start the main game loop
+        main_game_loop(player_grid, computer_grid, ship_lengths)
 
-# Start the main game loop
-main_game_loop(player_grid, computer_grid, ship_lengths)
+        # Ask user if they want to play again
+        replay = input("Do you want to play again? (y/n): ").strip().lower()
+        if replay != 'y':
+            print("Thanks for playing!")
+            break
