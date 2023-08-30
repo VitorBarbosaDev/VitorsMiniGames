@@ -170,11 +170,30 @@ def get_player_guess(player_previous_guesses, grid_size):
             print("Invalid input. Please enter a number.")
 
 
-def computer_turn(player_grid):
-    """Deals with computer's turn'"""
-    row = random.randint(0, len(player_grid) - 1)
-    col = random.randint(0, len(player_grid[0]) - 1)
-    return row, col
+def computer_turn(player_grid, previous_hits, previous_guesses):
+    """Deals with the computer's turn"""
+    # If no previous hits, guess randomly
+    if not previous_hits:
+        while True:
+            row = random.randint(0, len(player_grid) - 1)
+            col = random.randint(0, len(player_grid[0]) - 1)
+            if (row, col) not in previous_guesses:
+                return row, col
+
+    # If there are previous hits, try an adjacent cell
+    last_hit_row, last_hit_col = previous_hits[-1]
+    adjacent_cells = [(last_hit_row + i, last_hit_col + j) for i, j in [(-1, 0), (1, 0), (0, -1), (0, 1)]]
+
+    for row, col in adjacent_cells:
+        if 0 <= row < len(player_grid) and 0 <= col < len(player_grid[0]) and (row, col) not in previous_guesses:
+            return row, col
+
+    # If all adjacent cells are off the board or have been guessed, revert to random guessing
+    while True:
+        row = random.randint(0, len(player_grid) - 1)
+        col = random.randint(0, len(player_grid[0]) - 1)
+        if (row, col) not in previous_guesses:
+            return row, col
 
 
 def main_game_loop(player_grid, computer_grid, ship_lengths):
@@ -183,6 +202,8 @@ def main_game_loop(player_grid, computer_grid, ship_lengths):
     computer_ships_sunk = 0
     total_ship_cells = sum(ship_lengths)
     player_previous_guesses = set()  # To keep track of player's previous guesses
+    computer_previous_hits = []  # To keep track of computer's previous hits
+    computer_previous_guesses = set()  # To keep track of computer's previous guesses
     grid_size = len(player_grid)
 
     while player_ships_sunk < total_ship_cells and computer_ships_sunk < total_ship_cells:
@@ -201,10 +222,12 @@ def main_game_loop(player_grid, computer_grid, ship_lengths):
 
         # Computer's turn
         print("Computer's Turn:")
-        row, col = computer_turn(player_grid)
+        row, col = computer_turn(player_grid, computer_previous_hits, computer_previous_guesses)
+        computer_previous_guesses.add((row, col))
 
         if make_guess(player_grid, row, col):
             computer_ships_sunk += 1
+            computer_previous_hits.append((row, col))
 
     if player_ships_sunk == total_ship_cells:
         print("You win!")
