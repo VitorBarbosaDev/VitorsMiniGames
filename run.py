@@ -48,7 +48,7 @@ def display_guess_grid(grid):
 
 def is_valid_guess(row, col, grid_size):
     """Checks if guess is valid"""
-    return 0 <= row < grid_size and 0 <= col < grid_size
+    return 1 <= row <= grid_size and 1 <= col <= grid_size
 
 
 def place_ship(grid, row, col, orientation, length):
@@ -144,37 +144,67 @@ def make_guess(grid, row, col):
         return False
 
 
+def get_player_guess(player_previous_guesses, grid_size):
+    """Deals With players Guess"""
+    while True:
+        try:
+            row_input = input("Enter the row number for your guess: \n")
+            col_input = input("Enter the column number for your guess: \n")
+
+            if row_input == '' or col_input == '':
+                print("You must enter a value for row and column. Try again.")
+                continue
+
+            row = int(row_input)
+            col = int(col_input)
+
+            if (row, col) in player_previous_guesses:
+                print("You've already guessed this location. Try again.")
+                continue
+
+            if is_valid_guess(row, col, grid_size):
+                return row, col
+            else:
+                print("Invalid guess. Please try again.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+
+def computer_turn(player_grid):
+    """Deals with computer's turn'"""
+    row = random.randint(0, len(player_grid) - 1)
+    col = random.randint(0, len(player_grid[0]) - 1)
+    return row, col
+
+
 def main_game_loop(player_grid, computer_grid, ship_lengths):
-    """
-    Main Game Loop:
-    Loop through the game until the player wins or the computer wins
-    """
+    """Main game loop"""
     player_ships_sunk = 0
     computer_ships_sunk = 0
     total_ship_cells = sum(ship_lengths)
+    player_previous_guesses = set()  # To keep track of player's previous guesses
+    grid_size = len(player_grid)
 
     while player_ships_sunk < total_ship_cells and computer_ships_sunk < total_ship_cells:
         # Player's turn
         print("Your Board:")
         display_grid(player_grid)
         print("Player's Turn:")
-        row = int(input("Enter the row number for your guess: \n"))
-        col = int(input("Enter the column number for your guess: \n"))
 
-        if is_valid_guess(row, col, len(player_grid)):
-            if make_guess(computer_grid, row, col):
-                player_ships_sunk += 1
-            print("Your Guesses:")
-            display_guess_grid(computer_grid)
-                # Computer's turn
-            print("Computer's Turn:")
-            row = random.randint(0, len(computer_grid) - 1)
-            col = random.randint(0, len(computer_grid[0]) - 1)
+        row, col = get_player_guess(player_previous_guesses, grid_size)
+        player_previous_guesses.add((row, col))
 
-            if make_guess(player_grid, row, col):
-                computer_ships_sunk += 1
-        else:
-            print("Invalid guess. Please try again.")
+        if make_guess(computer_grid, row, col):
+            player_ships_sunk += 1
+        print("Your Guesses:")
+        display_guess_grid(computer_grid)
+
+        # Computer's turn
+        print("Computer's Turn:")
+        row, col = computer_turn(player_grid)
+
+        if make_guess(player_grid, row, col):
+            computer_ships_sunk += 1
 
     if player_ships_sunk == total_ship_cells:
         print("You win!")
