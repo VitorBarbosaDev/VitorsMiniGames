@@ -47,22 +47,37 @@ The main goal of this problem was for me to be able to show off my Python skills
 - Entry Screen
     When the user loads up the site they are greeted with a welcome and then they are promoted to enter a grid size
     minimum size a grid can be is 5.
+  
     ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/c0a232ef-3e8f-438a-ab48-998526cbc009)
+  
 - Placement Mode
     Then they get to choose where they want to place each of their ships and if they enter an incorrect value they are         promoted to try again.
+  
     ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/217add24-f69b-4471-8c3d-67c1ef906897)
+  
 - Game Mode
   After placing their ships the user can then begin playing the game and trying to guess where the ai ships are placed
+  
     ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/05aa80a0-8bd7-46fa-883e-8cf4b29f295f)
+  
     They are promoted to enter rows and columns again, and there is input validation to make sure the user can not crash       the game
+  
     ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/df09b351-ce9d-48a7-b588-7337cc901d2c)
-    After the player puts in a successful guess the AI then guess 
+  
+    After the player puts in a successful guess the AI then guess
+  
     ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/1bd6df30-21a7-4903-8fe3-502da7573bbd)
-    The AI will use its intelligent AI to guess positions close to a hit 
+  
+    The AI will use its intelligent AI to guess positions close to a hit
+  
 - End Game
     After guessing all the AI positions or losing the game will say you lose or win
+  
     ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/ff3134b7-9575-4d08-8272-a0d5bfe58b49)
-    You will then be promoted if you want to play again If you say y the game will start again if you say n it will print      thank you for playing
+  
+    You will then be promoted if you want to play again If you say y the game will start again if you say n it will print
+    thank you for playing
+  
     ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/2e0e78f6-ad52-4c43-bfa3-1d1c8a111c7b)
 
 
@@ -77,14 +92,10 @@ The main goal of this problem was for me to be able to show off my Python skills
 ## Tools & Technologies Used
 I used the following technologies and resources to create this site:
 
-- [Git](https://git-scm.com)
-    - Git has been used as the CLI version control tool
-- [Github](https://github.com)
-    - Github has been used to store the code and publish the site via Github Pages
-- [Python](https://www.python.org) 
-    - Python has been used as the main programming language.
-- [CI Python Linter](https://pep8ci.herokuapp.com)
-    - The Code Institute Python Linter has been used to verify the code,
+- [Git](https://git-scm.com) - For version control
+- [GitHub](https://github.com) - For code hosting
+- [Python](https://www.python.org) - Main programming language
+- [CI Python Linter](https://pep8ci.herokuapp.com) - For code verification
 ---
 
 
@@ -239,4 +250,4 @@ To get a local copy of the `VitorsMiniGames` repository, adhere to these guideli
 
 
 ### Acknowledgements
-- A very big Thank You goes to my mentor Alex, who helped me with some questions I had!
+Special thanks to my mentor Alex for his invaluable assistance.
