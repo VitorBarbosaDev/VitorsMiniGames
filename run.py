@@ -21,6 +21,7 @@ def initialize_grid(size):
     return grid
 
 def get_grid_size():
+    """Set size of grid"""
     return int(input("Enter the grid size (e.g., 5 for a 5x5 grid): "))
 
 def display_grid(grid):
@@ -46,9 +47,19 @@ def place_ship(grid, row, col, orientation, length):
             grid[row + i][col] = 'S'
 
 
+def place_multiple_ships(grid, ship_lengths,placer):
+    """Place multiple ships in the grid"""
+    for length in ship_lengths:
+        if placer == "player":
+            place_player_ships(grid, length)
+        else:
+            place_computer_ships(grid, length)
+
+
 def place_player_ships(grid, ship_length):
     """Player can enter a place and direction they want their ship to be placed in"""
     display_grid(grid)
+    print("Where do you want to place your ship of length " + str(ship_length) + "?")
     row = int(input("Enter the row number to place your ship: \n"))
     col = int(input("Enter the column number to place your ship: \n"))
     orientation = input("Enter the orientation (H for horizontal, V for vertical): \n").upper()
@@ -75,15 +86,16 @@ def make_guess(grid, row, col):
         return False
 
 
-def main_game_loop(player_grid, computer_grid, ship_length):
+def main_game_loop(player_grid, computer_grid, ship_lengths):
     """
     Main Game Loop:
     Loop through the game until the player wins or the computer wins
     """
     player_ships_sunk = 0
     computer_ships_sunk = 0
+    total_ship_cells = sum(ship_lengths)
 
-    while player_ships_sunk < ship_length and computer_ships_sunk < ship_length:
+    while player_ships_sunk < total_ship_cells and computer_ships_sunk < total_ship_cells:
         # Player's turn
         print("Player's Turn:")
         display_grid(player_grid)
@@ -103,9 +115,7 @@ def main_game_loop(player_grid, computer_grid, ship_length):
         else:
             print("Invalid guess. Please try again.")
 
-
-
-    if player_ships_sunk == ship_length:
+    if player_ships_sunk == total_ship_cells:
         print("You win!")
     else:
         print("Computer wins!")
@@ -119,9 +129,12 @@ grid_size = get_grid_size()
 player_grid = initialize_grid(grid_size)
 computer_grid = initialize_grid(grid_size)
 
-# Place a 3-cell long ship for player and computer
-place_player_ships(player_grid, 3)
-place_computer_ships(computer_grid, 3)
+# Place multiple ships for player and computer
+ship_lengths = [5, 4, 3, 3, 2]
+
+place_multiple_ships(player_grid, ship_lengths,"player")
+place_multiple_ships(computer_grid, ship_lengths,"bot")
+
 
 # Start the main game loop
-main_game_loop(player_grid, computer_grid, 3)
+main_game_loop(player_grid, computer_grid, ship_lengths)
