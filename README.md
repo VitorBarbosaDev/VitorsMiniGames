@@ -9,7 +9,7 @@ Use the following link to access the [ deployed project on Heroku](https://vitor
 ---
 
 ## Main Objectives
-My Main objective for this project was to learn from the mistakes that I have made in project two. Especially the fact I didn't test the app enough and submitted it with an audio loading error. So for this one every function has been tested and I have tried to break each one in many different ways.
+My Main objective for this project was to learn from the mistakes that I have made in project two. Especially the fact I didn't test the app enough and submitted it with an audio loading error. So for this one, every function has been tested and I have tried to break each one in many different ways.
 
 - I wanted to re-create battleships
 - I wanted the player to be able to expand or shrink the board
@@ -56,7 +56,7 @@ The main goal of this problem was for me to be able to show off my Python skills
     ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/217add24-f69b-4471-8c3d-67c1ef906897)
   
 - Game Mode
-  After placing their ships the user can then begin playing the game and trying to guess where the ai ships are placed
+  After placing their ships the user can then begin playing the game and trying to guess where the AI ships are placed
   
     ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/05aa80a0-8bd7-46fa-883e-8cf4b29f295f)
   
@@ -107,7 +107,7 @@ Here is a list of functions used in this Battleship project, along with brief ex
     - Initializes a grid with a given size, filling it with '~' to represent empty water.
 
 - `get_grid_size()`
-    - Prompts the user to input the size of the grid and validates it.
+    - Prompts the user to input the size of the grid and validate it.
 
 - `display_grid(grid)`
     - Displays the current state of the grid to the console.
