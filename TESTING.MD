@@ -29,27 +29,10 @@ Use the following link to access the [ deployed project on Heroku](https://vitor
 Automated Testing includes all the testing that is carried out by a program, like W3C HTML validation.
 
 ###  CI Python Linter
-CI Python Linter was used to validate the python code
+CI Python Linter was used to validate the Python code
 
+![image](TestingImages/Screenshot 2023-08-31 005921.png)
 
-
-
-
-#### Mobile Testing
-
-#### Results for Index.html
-![image](https://github.com/VitorBarbosaDev/EndlessRunnerGame/assets/46977318/c811289f-2735-43e9-964a-13fc6224e065)
-
-
-
-### WAVE
-Wave was used to test the accessibility of the page 
-
-#### Results for Index.html
-- ![image](https://github.com/VitorBarbosaDev/EndlessRunnerGame/assets/46977318/00efa76e-eba4-45a1-bc87-e84573866818)
-
-
-I do seem to have a bit of a contrast issue with my buttons so changing these would probably be worth it in the future for better accessibility.
 
 
 ## MANUAL TESTING
