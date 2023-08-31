@@ -26,7 +26,7 @@ Use the following link to access the [ deployed project on Heroku](https://vitor
 
 ## AUTOMATED TESTING
 
-Automated Testing includes all the testing that is carried out by a program, like W3C HTML validation.
+Automated Testing includes all the testing that is carried out by a program
 
 ###  CI Python Linter
 CI Python Linter was used to validate the Python code
@@ -79,8 +79,8 @@ No known bugs
 
 | No | Bug | How I resolved the issue |
 | :--- | :--- | :--- |
-| 1 | The player could place ships outside grid. | added check to ensure this wasn't possible |
+| 1 | The player could place ships outside the grid. | added check to ensure this wasn't possible |
 | 2 | The player could crash the game by inputting the wrong type of variable | To fix this I added string validation to all inputs. |
 | 3 | The player board wasn't showing. | I was overwriting the player's board by calling the AI grid in the same method. |
 | 4 | If you inputted h instead of H the game wouldn't place ship | I added an upper to ensure the string enter was always upper case. |
-| 5 | The AI would continue to place positions even if off the board. | Added a check that casuesed the AI to go back to picking random if only other option is off the board. |
+| 5 | The AI would continue to place positions even if off the board. | Added a check that caused the AI to go back to picking random if only the other option is off the board. |
