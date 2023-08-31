@@ -4,13 +4,14 @@
 
 
 
-Live Site: https://vitorsbattleships-728ecb558e1a.herokuapp.com/
+Use the following link to access the [ deployed project on Heroku](https://vitorsbattleships-728ecb558e1a.herokuapp.com/)
+
 ---
 
 ## CONTENTS
 
 * [AUTOMATED TESTING](#automated-testing)
-  * [W3C Validator](#w3c-validator)
+  * [CI Python Linter](#CI-Python-Linter)
 
 
 * [MANUAL TESTING](#manual-testing)
@@ -27,8 +28,8 @@ Live Site: https://vitorsbattleships-728ecb558e1a.herokuapp.com/
 
 Automated Testing includes all the testing that is carried out by a program, like W3C HTML validation.
 
-###  W3C Validator
-W3C was used to validate all pages and also the CSS.
+###  CI Python Linter
+CI Python Linter was used to validate the python code
 
 
 
