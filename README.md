@@ -13,7 +13,7 @@ My Main objective for this project was to learn from the mistakes that I have ma
 
 - I wanted to re-create battleships
 - I wanted the player to be able to expand or shrink the board
-- I wanted it to have intelligent Ai that
+- I wanted it to have intelligent Ai 
 - I wanted to make it easy to understand
 
 
@@ -76,7 +76,7 @@ The main goal of this problem was for me to be able to show off my Python skills
     ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/ff3134b7-9575-4d08-8272-a0d5bfe58b49)
   
     You will then be promoted if you want to play again If you say y the game will start again if you say n it will print
-    thank you for playing
+    Thank you for playing
   
     ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/2e0e78f6-ad52-4c43-bfa3-1d1c8a111c7b)
 
