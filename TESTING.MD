@@ -31,7 +31,7 @@ Automated Testing includes all the testing that is carried out by a program, lik
 ###  CI Python Linter
 CI Python Linter was used to validate the Python code
 
-![image](TestingImages/Screenshot 2023-08-31 005921.png)
+![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/blob/6cecc410f066b6f3d413e62dbfb71da65dcf7f19/TestingImages/Screenshot%202023-08-31%20005921.png)
 
 
 
@@ -42,38 +42,16 @@ CI Python Linter was used to validate the Python code
 
 | Goals | How are they achieved? | Image |
 | :--- | :--- | :--- |
-| `First Time Visitors` |
+| `Visitors` |
 |  |  |  |
-| I want to play a game on the web | The website available on the web and is responsive and adjusts to the size of the screen | [Multi_Display_Example](https://github.com/VitorBarbosaDev/EndlessRunnerGame/assets/46977318/8950d572-a388-441f-aa08-5d328997a5bb) |
-| I want to learn how to play the game and what my goal is. | The game has a button that pops up a written tutorial. | [How To Play](https://github.com/VitorBarbosaDev/EndlessRunnerGame/assets/46977318/841a92a7-1731-4568-bdfa-90f8f9bcfdcf)|
-| I want to easily tell what my score is. | Score at the top of the screen always. | [score](https://github.com/VitorBarbosaDev/EndlessRunnerGame/assets/46977318/304b7e1c-b30e-4004-b460-cf8e8fc0b59f)|
-|`Returning Visitors`|
-|  |  |  |
-| I want to try and beat my high score. | They can click on the Leaderboard button and scroll to find their last top score  | [Top scores](https://github.com/VitorBarbosaDev/EndlessRunnerGame/assets/46977318/6c24c3e2-9f52-4247-bfbb-f5f32c31e9a4)|
-| I want to listen to the game sounds. | They can click the Mute button to turn sound on or off | [Mute Button](https://github.com/VitorBarbosaDev/EndlessRunnerGame/assets/46977318/b522cdc5-dd13-4259-8f08-d184d9bac643) |
-| I want to play on my mobile instead of pc. | Responsive design allows players to put down the keyboard and jump on mobile |  [Multi_Display_Example](https://github.com/VitorBarbosaDev/EndlessRunnerGame/assets/46977318/8950d572-a388-441f-aa08-5d328997a5bb) |
-|  |  |  |
-| I want to few the leaderboard to see if my score is still top ten. | They can see their top scores on the leaderboard screen. | [Top scores](https://github.com/VitorBarbosaDev/EndlessRunnerGame/assets/46977318/6c24c3e2-9f52-4247-bfbb-f5f32c31e9a4) |
+| I want to play a game on the web | The website is available on the web  | ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/c0a232ef-3e8f-438a-ab48-998526cbc009) |
+| I want to be able to choose where I place my ships. | The game allows the player to choose where ships are placed. | ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/217add24-f69b-4471-8c3d-67c1ef906897)|
+| I would like to be able to guess the AI ship's positions. | Game allows users to guess positions. |  ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/df09b351-ce9d-48a7-b588-7337cc901d2c)|
+| I would like to be able to win or lose. | Once either the player or AI has cleared all ships they are declared the winner  |  ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/ff3134b7-9575-4d08-8272-a0d5bfe58b49)|
+| I would like the AI to be intelligent enough to make winning a challenge. | The Ai remembers last ship it hit and will choose adjacent positions until the ship is clear | ![image](https://github.com/VitorBarbosaDev/VitorsMiniGames/assets/46977318/1bd6df30-21a7-4903-8fe3-502da7573bbd) |
 
 
 ### Full Testing
-
-Full testing was performed on the following devices:
-
-* Computer:
-  * 1440p Monitor
-  * 1080p Monitor
-* Laptop:
-  * Macbook Pro 2022 14 inch screen
-* Mobile Devices:
-  * Pocophone F3.
-  * Samsung Galaxy S20 Ultra .
-
-Each device tested the site using the following browsers:
-
-* Google Chrome
-* Safari
-* Firefox
 
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
